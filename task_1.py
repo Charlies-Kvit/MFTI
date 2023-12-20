@@ -33,6 +33,6 @@ def get_average_score():
             finally_data[row[-2]] = [score]
     with open('student_new.csv', 'w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_NONNUMERIC, delimiter=",")
-        writer.writerow(['class', 'average_score'])
-        for el in finally_data:
-            writer.writerow([el, round(sum(finally_data[el]) / len(finally_data[el]), 3)])
+        writer.writerow(data[0])
+        for el in data[1:]:
+            writer.writerow([el[0], el[1], el[2], el[3], round(sum(finally_data[el[3]]) / len(finally_data[el[3]]), 3)])

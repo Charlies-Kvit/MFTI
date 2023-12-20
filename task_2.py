@@ -19,7 +19,7 @@ def get_winners() -> str:
     for student in data:
         if '10' in student[-2]:
             name = student[1].split()
-            winners.append(f"{name[1]} {name[0]}")
+            winners.append(f"{name[1][0]}. {name[0]}")
             if len(winners) == 3:
                 break
     for index, el in enumerate(winners):

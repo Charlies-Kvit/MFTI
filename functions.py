@@ -28,6 +28,17 @@ def get_score(score: str) -> int:
         return 0
 
 
-def get_students_dict() -> dict:
+def get_students_dict_project() -> dict:
+    """
+    Возвращает словарь, где ключом является id проекта, а значение - словарь с соответствующим содердимым
+    id - айди ученика
+    name - ФИО ученика
+    class - класс ученика
+    score - оценка за проект
+    :return:
+    """
     data = read_csv_file('students.csv', encoding='utf-8')
-
+    answer = {}
+    for row in data[1:]:
+        answer[int(row[2])] = {'id': row[0], 'name': row[1], 'class': row[-2], 'score': row[-1]}
+    return answer
