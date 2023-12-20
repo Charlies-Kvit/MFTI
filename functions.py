@@ -26,3 +26,8 @@ def get_score(score: str) -> int:
         return int(score)
     else:
         return 0
+
+
+def get_students_dict() -> dict:
+    data = read_csv_file('students.csv', encoding='utf-8')
+
