@@ -26,20 +26,3 @@ def get_score(score: str) -> int:
         return int(score)
     else:
         return 0
-
-
-def past_sort(data: list) -> list:
-    """
-
-    :param data:
-    :return:
-    """
-    for index, el in enumerate(data):
-        if index == 0:
-            continue
-        el_ind = index
-        while el_ind != 0 and el < data[el_ind - 1]:
-            data[el_ind] = data[el_ind - 1]
-            data[el_ind - 1] = el
-            el_ind -= 1
-    return data
